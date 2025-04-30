@@ -8,7 +8,8 @@ function App() {
 
   const compareFollow = async () => {
     try {
-      const response = await fetch('https://instacheck.us/compare', {
+      console.log('Submitting to backend...');
+      const response = await fetch('https://instacheck.onrender.com/compare', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -19,14 +20,17 @@ function App() {
         }),
       });
 
+      console.log('Raw response:', response);
+
       if (!response.ok) {
         throw new Error(`Server responded with status ${response.status}`);
       }
 
       const data = await response.json();
+      console.log('Parsed response:', data);
       setResult(data.not_following_back);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Fetch error:', error);
       alert('Something went wrong. Is the backend running?');
     }
   };
