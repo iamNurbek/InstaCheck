@@ -3,7 +3,7 @@ from flask_cors import CORS
 import re
 
 app = Flask(__name__)
-CORS(app, origins=["https://instacheck.us", "https://www.instacheck.us"])
+CORS(app, resources={r"/*": {"origins": ["https://instacheck.us", "https://www.instacheck.us"]}})
 
 def extract_usernames(raw_text):
     lines = raw_text.splitlines()
@@ -27,6 +27,7 @@ def health_check():
 @app.route('/compare', methods=['POST'])
 def compare():
     data = request.get_json()
+    print("Incoming Data:", data)
     followers_text = data.get("followers", "")
     following_text = data.get("following", "")
 
