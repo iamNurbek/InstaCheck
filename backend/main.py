@@ -3,7 +3,7 @@ from flask_cors import CORS
 import re
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://instacheck.us", "https://www.instacheck.us"])
 
 def extract_usernames(raw_text):
     lines = raw_text.splitlines()
