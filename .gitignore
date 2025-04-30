@@ -1,0 +1,23 @@
+# ---- General ----
+.DS_Store
+*.log
+*.env
+.env.*
+
+# ---- Python Backend ----
+backend/__pycache__/
+backend/.venv/
+backend/*.pyc
+backend/*.pyo
+
+# ---- Node Frontend ----
+frontend/node_modules/
+frontend/.env
+frontend/.next/
+frontend/build/
+frontend/dist/
+
+# ---- OS Generated ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
