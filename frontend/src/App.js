@@ -8,7 +8,7 @@ function App() {
 
   const compareFollow = async () => {
     try {
-      const response = await fetch('https://instacheck.onrender.com/compare', {
+      const response = await fetch('https://instacheck.us/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
