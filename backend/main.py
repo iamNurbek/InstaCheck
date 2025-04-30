@@ -11,11 +11,8 @@ def extract_usernames(raw_text):
 
     for line in lines:
         line = line.strip()
-        if not line:
-            continue
-        if line.lower() in ['remove', 'follow', 'following']:
-            continue
-        if line == line.lower() and re.match(r"^[a-z0-9._]{3,30}$", line):
+
+        if re.match(r"^[a-zA-Z0-9._]{3,30}$", line):
             usernames.append(line)
 
     return usernames
@@ -31,8 +28,8 @@ def compare():
     followers_text = data.get("followers", "")
     following_text = data.get("following", "")
 
-    followers = set(extract_usernames(followers_text))
-    following = set(extract_usernames(following_text))
+    followers = set(u.lower() for u in extract_usernames(followers_text))
+    following = set(u.lower() for u in extract_usernames(following_text))
 
     not_following_back = list(following - followers)
 
