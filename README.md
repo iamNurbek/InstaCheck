@@ -7,7 +7,7 @@ Paste your followers and following lists — and we’ll do the comparing for yo
 
 ## 🚀 Live Demo
 
-🌐 [instacheck.onrender.com](https://instacheck.onrender.com) *(replace with your deployed link)*
+🌐 [https://instacheck.us/](https://instacheck.us/) 
 
 ---
 
